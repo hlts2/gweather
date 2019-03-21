@@ -47,6 +47,13 @@ func main() {
 	app.Usage = "CLI tool for acquiring weather information regularly"
 	app.Version = "v1.0,0"
 	app.Action = action
+	app.Flags = []cli.Flag{
+		cli.UintFlag{
+			Name:  "minutes, m",
+			Usage: "Interval to get information",
+			Value: 3,
+		},
+	}
 
 	app.Run(os.Args)
 }
