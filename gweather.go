@@ -1,4 +1,4 @@
-package main
+package gwether
 
 import (
 	"context"
@@ -95,7 +95,7 @@ func job(ctx context.Context, url string) error {
 	return merr
 }
 
-func main() {
+func test() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
