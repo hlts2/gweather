@@ -3,15 +3,10 @@ package gwether
 import (
 	"context"
 	"net/http"
-	"os"
-	"os/signal"
 	"sync"
-	"syscall"
-	"time"
 
 	xj "github.com/basgys/goxml2json"
 	"github.com/hlts2/gson"
-	"github.com/kpango/glg"
 	"github.com/pkg/errors"
 	"go.uber.org/multierr"
 )
@@ -93,40 +88,4 @@ func job(ctx context.Context, url string) error {
 		merr = multierr.Append(merr, err)
 	}
 	return merr
-}
-
-func test() {
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
-	sigCh := make(chan os.Signal)
-	signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
-
-	d := time.NewTicker(3 * time.Minute)
-	defer d.Stop()
-
-	for {
-		select {
-		case sig := <-sigCh:
-			glg.Infof("Received of signal: %v", sig)
-			cancel()
-
-		case <-ctx.Done():
-			signal.Stop(sigCh)
-			close(sigCh)
-			glg.Info("Finish application")
-			return
-
-		case <-d.C:
-			start := time.Now()
-			glg.Info("Start job")
-
-			err := job(ctx, URL)
-			if err != nil {
-				glg.Error(err)
-			}
-
-			glg.Infof("Finish job, time: %v", time.Since(start))
-		}
-	}
 }
