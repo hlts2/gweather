@@ -7,11 +7,26 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/kpango/glg"
 	"github.com/urfave/cli"
+	"go.uber.org/zap"
 )
 
+func getSugeredLogger() (*zap.SugaredLogger, func()) {
+	logger, _ := zap.NewProduction()
+	suger := logger.Sugar()
+	return suger, func() {
+		logger.Sync()
+	}
+}
+
 func action(cli *cli.Context) (err error) {
+	sugger, flush := getSugeredLogger()
+	sugger.Info("Start cli application")
+	defer func() {
+		sugger.Info("Finish cli application")
+		flush()
+	}()
+
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
@@ -24,7 +39,8 @@ func action(cli *cli.Context) (err error) {
 	for {
 		select {
 		case sig := <-sigCh:
-			glg.Infof("Received of signal: %v", sig)
+			sugger.Infow("Received os signal",
+				"signal", sig)
 			cancel()
 
 		case <-ctx.Done():
@@ -34,8 +50,8 @@ func action(cli *cli.Context) (err error) {
 
 		case <-t.C:
 			start := time.Now()
-			glg.Info("Start job to get information")
-			glg.Infof("Finish job. time: %v", time.Since(start))
+			sugger.Info("Start job to get information")
+			sugger.Infow("Finish job", "time", time.Since(start))
 		}
 	}
 }
@@ -54,7 +70,5 @@ func main() {
 		},
 	}
 
-	glg.Info("Start CLI Application")
 	app.Run(os.Args)
-	glg.Info("Finish CLI Application")
 }
