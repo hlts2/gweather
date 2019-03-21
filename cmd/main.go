@@ -11,7 +11,7 @@ import (
 	"go.uber.org/zap"
 )
 
-func getSugeredLogger() (*zap.SugaredLogger, func()) {
+func getSugaredLogger() (*zap.SugaredLogger, func()) {
 	logger, _ := zap.NewProduction()
 	suger := logger.Sugar()
 	return suger, func() {
@@ -20,10 +20,10 @@ func getSugeredLogger() (*zap.SugaredLogger, func()) {
 }
 
 func action(cli *cli.Context) (err error) {
-	sugger, flush := getSugeredLogger()
-	sugger.Info("Start cli application")
+	sugar, flush := getSugaredLogger()
+	sugar.Info("Start cli application")
 	defer func() {
-		sugger.Info("Finish cli application")
+		sugar.Info("Finish cli application")
 		flush()
 	}()
 
@@ -39,7 +39,7 @@ func action(cli *cli.Context) (err error) {
 	for {
 		select {
 		case sig := <-sigCh:
-			sugger.Infow("Received os signal",
+			sugar.Infow("Received os signal",
 				"signal", sig)
 			cancel()
 
@@ -50,8 +50,8 @@ func action(cli *cli.Context) (err error) {
 
 		case <-t.C:
 			start := time.Now()
-			sugger.Info("Start job to get information")
-			sugger.Infow("Finish job", "time", time.Since(start))
+			sugar.Info("Start job to get information")
+			sugar.Infow("Finish job", "time", time.Since(start))
 		}
 	}
 }
