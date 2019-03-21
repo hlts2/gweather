@@ -18,7 +18,7 @@ func action(cli *cli.Context) (err error) {
 	sigCh := make(chan os.Signal)
 	signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
 
-	t := time.NewTicker(3 * time.Minute)
+	t := time.NewTicker(time.Duration(cli.Uint("s")) * time.Second)
 	defer t.Stop()
 
 	for {
@@ -30,7 +30,6 @@ func action(cli *cli.Context) (err error) {
 		case <-ctx.Done():
 			signal.Stop(sigCh)
 			close(sigCh)
-			glg.Info("Finish CLI application")
 			return
 
 		case <-t.C:
@@ -49,11 +48,13 @@ func main() {
 	app.Action = action
 	app.Flags = []cli.Flag{
 		cli.UintFlag{
-			Name:  "minutes, m",
+			Name:  "second, s",
 			Usage: "Interval to get information",
-			Value: 3,
+			Value: 180,
 		},
 	}
 
+	glg.Info("Start CLI Application")
 	app.Run(os.Args)
+	glg.Info("Finish CLI Application")
 }
