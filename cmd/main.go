@@ -7,6 +7,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/gomodule/redigo/redis"
 	"github.com/kpango/glg"
 	"github.com/urfave/cli"
 
@@ -40,10 +41,20 @@ func action(cli *cli.Context) (err error) {
 			start := time.Now()
 			glg.Info("Start job to get information")
 
-			_, err := fetcher.Fetch(ctx)
+			mm, err := fetcher.Fetch(ctx)
 			if err != nil {
 				glg.Errorf("faild to fetch contents: %v", err)
 			}
+
+			// FIXME: 毎回Connectionを生成しない
+			c := redis.NewConn(nil, 1*time.Microsecond, 1*time.Second)
+
+			// e.g) key: 気象特別警報・警報・注意報_鳥取地方気象台
+			for key, val := range mm {
+				c.Send("SET", key, val)
+			}
+
+			c.Flush()
 
 			glg.Infof("Finish job. time: %v", time.Since(start))
 		}
