@@ -55,6 +55,7 @@ func action(cli *cli.Context) (err error) {
 		case <-t.C:
 			start := time.Now()
 			sugar.Info("Start job to get information")
+
 			_, err := fetcher.Fetch(ctx)
 			if err != nil {
 				sugar.Error(err)
