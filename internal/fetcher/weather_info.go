@@ -17,7 +17,7 @@ const (
 	URL = "http://www.data.jma.go.jp/developer/xml/feed/extra.xml"
 )
 
-// WetherInfomationFetcher --
+// WetherInfomationFetcher represents an interface to fetch weather implementation.
 type WetherInfomationFetcher interface {
 	Fetch(ctx context.Context) (map[string]map[string]interface{}, error)
 }
