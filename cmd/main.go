@@ -54,7 +54,10 @@ func action(cli *cli.Context) (err error) {
 				c.Send("SET", key, val)
 			}
 
-			c.Flush()
+			err = c.Flush()
+			if err != nil {
+				glg.Errorf("faild to flush: %v", err)
+			}
 
 			glg.Infof("Finish job. time: %v", time.Since(start))
 		}
