@@ -7,28 +7,13 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/kpango/glg"
 	"github.com/urfave/cli"
-	"go.uber.org/zap"
 
 	"github.com/hlts2/gweather/internal/fetcher"
 )
 
-func getSugaredLogger() (*zap.SugaredLogger, func()) {
-	logger, _ := zap.NewProduction()
-	suger := logger.Sugar()
-	return suger, func() {
-		logger.Sync()
-	}
-}
-
 func action(cli *cli.Context) (err error) {
-	sugar, sync := getSugaredLogger()
-	sugar.Info("Start cli application")
-	defer func() {
-		sugar.Info("Finish cli application")
-		sync()
-	}()
-
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
@@ -43,8 +28,7 @@ func action(cli *cli.Context) (err error) {
 	for {
 		select {
 		case sig := <-sigCh:
-			sugar.Infow("Received os signal",
-				"signal", sig)
+			glg.Warnf("Received os signal: %v", sig)
 			cancel()
 
 		case <-ctx.Done():
@@ -54,14 +38,14 @@ func action(cli *cli.Context) (err error) {
 
 		case <-t.C:
 			start := time.Now()
-			sugar.Info("Start job to get information")
+			glg.Info("Start job to get information")
 
 			_, err := fetcher.Fetch(ctx)
 			if err != nil {
-				sugar.Error(err)
+				glg.Errorf("faild to fetch contents: %v", err)
 			}
 
-			sugar.Infow("Finish job", "time", time.Since(start))
+			glg.Infof("Finish job. time: %v", time.Since(start))
 		}
 	}
 }
@@ -80,5 +64,7 @@ func main() {
 		},
 	}
 
+	glg.Info("Start cli application")
 	app.Run(os.Args)
+	glg.Info("Finish cli application")
 }
