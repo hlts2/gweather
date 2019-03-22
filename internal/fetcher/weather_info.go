@@ -1,4 +1,4 @@
-package gwether
+package fetcher
 
 import (
 	"context"
@@ -16,6 +16,20 @@ const (
 	// see: http://xml.kishou.go.jp/xmlpull.html
 	URL = "http://www.data.jma.go.jp/developer/xml/feed/extra.xml"
 )
+
+// WetherInfomationFetcher --
+type WetherInfomationFetcher interface {
+	Fetch(ctx context.Context) (map[string]map[string]interface{}, error)
+}
+
+type wetherInfomationFetcherImpl struct {
+	mu sync.Mutex
+}
+
+// New returns WetherInfomationFetcher implementation(*wetherInfomationFetcherImpl).
+func New() WetherInfomationFetcher {
+	return new(wetherInfomationFetcherImpl)
+}
 
 func createGsonFromURL(url string) (*gson.Gson, error) {
 	resp, err := http.Get(url)
@@ -36,16 +50,18 @@ func createGsonFromURL(url string) (*gson.Gson, error) {
 	return g, nil
 }
 
-func job(ctx context.Context, url string) error {
-	g, err := createGsonFromURL(url)
+func (w *wetherInfomationFetcherImpl) Fetch(ctx context.Context) (map[string]map[string]interface{}, error) {
+	g, err := createGsonFromURL(URL)
 	if err != nil {
-		return errors.Wrapf(err, "faild to create gson from url: %v", URL)
+		return nil, errors.Wrapf(err, "faild to create gson from url: %v", URL)
 	}
 
 	r, err := g.GetByKeys("feed", "entry")
 	if err != nil {
-		return errors.Wrapf(err, "faild to get by keys, keys: %v", []string{"feed", "entry"})
+		return nil, errors.Wrapf(err, "faild to get by keys, keys: %v", []string{"feed", "entry"})
 	}
+
+	mm := make(map[string]map[string]interface{})
 
 	errCh := make(chan error)
 
@@ -58,8 +74,10 @@ func job(ctx context.Context, url string) error {
 
 			m := make(map[string]interface{})
 
-			m["title"] = rm["title"].String()
-			m["name"] = rm["author"].Map()["name"].String()
+			title, name := rm["title"].String(), rm["author"].Map()["name"].String()
+
+			m["title"] = title
+			m["name"] = name
 			m["updated"] = rm["updated"].String()
 			m["content"] = rm["content"].Map()["#content"].String()
 
@@ -75,6 +93,11 @@ func job(ctx context.Context, url string) error {
 				return
 			}
 			m["body"] = r.Interface()
+
+			w.mu.Lock()
+			// e.g) 気象特別警報・警報・注意報_鳥取地方気象台
+			mm[title+"_"+name] = m
+			w.mu.Unlock()
 		}(v)
 	}
 
@@ -87,5 +110,5 @@ func job(ctx context.Context, url string) error {
 	for err := range errCh {
 		merr = multierr.Append(merr, err)
 	}
-	return merr
+	return mm, merr
 }

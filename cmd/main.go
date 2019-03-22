@@ -9,6 +9,8 @@ import (
 
 	"github.com/urfave/cli"
 	"go.uber.org/zap"
+
+	"github.com/hlts2/gweather/internal/fetcher"
 )
 
 func getSugaredLogger() (*zap.SugaredLogger, func()) {
@@ -20,11 +22,11 @@ func getSugaredLogger() (*zap.SugaredLogger, func()) {
 }
 
 func action(cli *cli.Context) (err error) {
-	sugar, flush := getSugaredLogger()
+	sugar, sync := getSugaredLogger()
 	sugar.Info("Start cli application")
 	defer func() {
 		sugar.Info("Finish cli application")
-		flush()
+		sync()
 	}()
 
 	ctx, cancel := context.WithCancel(context.Background())
@@ -35,6 +37,8 @@ func action(cli *cli.Context) (err error) {
 
 	t := time.NewTicker(time.Duration(cli.Uint("s")) * time.Second)
 	defer t.Stop()
+
+	fetcher := fetcher.New()
 
 	for {
 		select {
@@ -51,6 +55,11 @@ func action(cli *cli.Context) (err error) {
 		case <-t.C:
 			start := time.Now()
 			sugar.Info("Start job to get information")
+			_, err := fetcher.Fetch(ctx)
+			if err != nil {
+				sugar.Error(err)
+			}
+
 			sugar.Infow("Finish job", "time", time.Since(start))
 		}
 	}
