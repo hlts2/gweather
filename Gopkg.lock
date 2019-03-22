@@ -10,12 +10,12 @@
   version = "v1.1.0"
 
 [[projects]]
-  digest = "1:515a388255ef1b1847b3eff493f32b46985b52989355c57b7661292832166717"
+  branch = "master"
+  digest = "1:4bbb0b508b217fe98712d28d492cc429a75e47e0dd6cf2f728e0528fd79ca732"
   name = "github.com/hlts2/gson"
   packages = ["."]
   pruneopts = "UT"
-  revision = "a010a16e8d3f0b7f336b7cec8cbb6cf1559d124b"
-  version = "v1.0"
+  revision = "28fad0b7090d4d46265caf4da2b41d01e021d1d5"
 
 [[projects]]
   digest = "1:ea11184d37725f7779503d5303e982369bff75b33d5428ee839e0d64bfb86c4b"
@@ -52,6 +52,14 @@
   ]
   pruneopts = "UT"
   revision = "e517b90714f7c0eabe6d2e570a5886ae077d6db6"
+
+[[projects]]
+  digest = "1:08d65904057412fc0270fc4812a1c90c594186819243160dc779a402d4b6d0bc"
+  name = "github.com/spf13/cast"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8c9545af88b134710ab1cd196795e7f2388358d7"
+  version = "v1.3.0"
 
 [[projects]]
   digest = "1:b24d38b282bacf9791408a080f606370efa3d364e4b5fd9ba0f7b87786d3b679"
