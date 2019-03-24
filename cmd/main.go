@@ -2,12 +2,12 @@ package main
 
 import (
 	"context"
+	"errors"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 
-	"github.com/gomodule/redigo/redis"
 	"github.com/kpango/glg"
 	"github.com/urfave/cli"
 
@@ -46,22 +46,28 @@ func action(cli *cli.Context) (err error) {
 				glg.Errorf("faild to fetch contents: %v", err)
 			}
 
-			// FIXME: 毎回Connectionを生成しない
-			c := redis.NewConn(nil, 1*time.Microsecond, 1*time.Second)
+			_ = mm
 
-			// e.g) key: 気象特別警報・警報・注意報_鳥取地方気象台
-			for key, val := range mm {
-				c.Send("SET", key, val)
-			}
-
-			err = c.Flush()
-			if err != nil {
-				glg.Errorf("faild to flush: %v", err)
-			}
+			// // FIXME: 毎回Connectionを生成しない
+			// c := redis.NewConn(nil, 1*time.Microsecond, 1*time.Second)
+			//
+			// // e.g) key: 気象特別警報・警報・注意報_鳥取地方気象台
+			// for key, val := range mm {
+			// 	c.Send("SET", key, val)
+			// }
+			//
+			// err = c.Flush()
+			// if err != nil {
+			// 	glg.Errorf("faild to flush: %v", err)
+			// }
 
 			glg.Infof("Finish job. time: %v", time.Since(start))
 		}
 	}
+}
+
+func before(cli *cli.Context) error {
+	return errors.New("hhh")
 }
 
 func main() {
@@ -69,6 +75,7 @@ func main() {
 	app.Name = "gweater"
 	app.Usage = "CLI tool for acquiring weather information regularly"
 	app.Version = "v1.0,0"
+	app.Before = before
 	app.Action = action
 	app.Flags = []cli.Flag{
 		cli.UintFlag{
@@ -76,9 +83,17 @@ func main() {
 			Usage: "Interval to get information",
 			Value: 180,
 		},
+		cli.StringFlag{
+			Name:  "config, c",
+			Usage: "Set the configuration file",
+			Value: "coofig.yaml",
+		},
 	}
 
 	glg.Info("Start cli application")
-	app.Run(os.Args)
+	err := app.Run(os.Args)
+	if err != nil {
+		glg.Error(err)
+	}
 	glg.Info("Finish cli application")
 }
