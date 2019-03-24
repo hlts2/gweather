@@ -85,9 +85,9 @@ func main() {
 			Value: 180,
 		},
 		cli.StringFlag{
-			Name:  "config, c",
-			Usage: "Set the configuration file",
-			Value: "coofig.yaml",
+			Name:  "host, h",
+			Usage: "Host address for Redis",
+			Value: "localhost:6379",
 		},
 	}
 
