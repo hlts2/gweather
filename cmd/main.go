@@ -77,8 +77,8 @@ func before(cli *cli.Context) error {
 		fetcher = f.New()
 	}
 
-	if pool != nil {
-		redis.New(cli.String("host"))
+	if pool == nil {
+		pool = redis.New(cli.String("host"))
 	}
 
 	return nil
@@ -100,7 +100,7 @@ func main() {
 		cli.StringFlag{
 			Name:  "host",
 			Usage: "Host address for Redis",
-			Value: "localhost:6379",
+			Value: "redis://127.0.0.1:6379",
 		},
 	}
 
