@@ -81,7 +81,7 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.UintFlag{
 			Name:  "second, s",
-			Usage: "Interval to get information",
+			Usage: "Interval to get weather information",
 			Value: 180,
 		},
 		cli.StringFlag{
