@@ -58,7 +58,7 @@ func (w *wetherInfomationFetcherImpl) Fetch(ctx context.Context, url string) (ma
 
 	r, err := g.GetByKeys("feed", "entry")
 	if err != nil {
-		return nil, errors.Wrapf(err, "faild to get by keys, keys: %v", []string{"feed", "entry"})
+		return nil, errors.Wrapf(err, "faild to get by keys: %v", []string{"feed", "entry"})
 	}
 
 	mm := make(map[string]map[string]interface{})
