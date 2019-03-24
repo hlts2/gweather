@@ -19,7 +19,7 @@ const (
 
 // WetherInfomationFetcher represents an interface to fetch weather implementation.
 type WetherInfomationFetcher interface {
-	Fetch(ctx context.Context) (map[string]map[string]interface{}, error)
+	Fetch(ctx context.Context, url string) (map[string]map[string]interface{}, error)
 }
 
 type wetherInfomationFetcherImpl struct {
@@ -50,8 +50,8 @@ func createGsonFromURL(url string) (*gson.Gson, error) {
 	return g, nil
 }
 
-func (w *wetherInfomationFetcherImpl) Fetch(ctx context.Context) (map[string]map[string]interface{}, error) {
-	g, err := createGsonFromURL(URL)
+func (w *wetherInfomationFetcherImpl) Fetch(ctx context.Context, url string) (map[string]map[string]interface{}, error) {
+	g, err := createGsonFromURL(url)
 	if err != nil {
 		return nil, errors.Wrapf(err, "faild to create gson from url: %v", URL)
 	}

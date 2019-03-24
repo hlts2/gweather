@@ -39,7 +39,7 @@ func action(cli *cli.Context) (err error) {
 			start := time.Now()
 			glg.Info("Start job to get information")
 
-			mm, err := fetcher.Fetch(ctx)
+			mm, err := fetcher.Fetch(ctx, f.URL)
 			if err != nil {
 				glg.Errorf("faild to fetch contents: %v", err)
 			}
