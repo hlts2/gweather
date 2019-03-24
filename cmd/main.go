@@ -85,7 +85,7 @@ func main() {
 			Value: 180,
 		},
 		cli.StringFlag{
-			Name:  "host, h",
+			Name:  "host",
 			Usage: "Host address for Redis",
 			Value: "localhost:6379",
 		},
