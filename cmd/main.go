@@ -2,17 +2,17 @@ package main
 
 import (
 	"context"
-	"errors"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 
+	f "github.com/hlts2/gweather/internal/fetcher"
 	"github.com/kpango/glg"
 	"github.com/urfave/cli"
-
-	"github.com/hlts2/gweather/internal/fetcher"
 )
+
+var fetcher f.WetherInfomationFetcher
 
 func action(cli *cli.Context) (err error) {
 	ctx, cancel := context.WithCancel(context.Background())
@@ -23,8 +23,6 @@ func action(cli *cli.Context) (err error) {
 
 	t := time.NewTicker(time.Duration(cli.Uint("s")) * time.Second)
 	defer t.Stop()
-
-	fetcher := fetcher.New()
 
 	for {
 		select {
@@ -67,7 +65,10 @@ func action(cli *cli.Context) (err error) {
 }
 
 func before(cli *cli.Context) error {
-	return errors.New("hhh")
+	if fetcher == nil {
+		fetcher = f.New()
+	}
+	return nil
 }
 
 func main() {
