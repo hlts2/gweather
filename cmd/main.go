@@ -8,11 +8,16 @@ import (
 	"time"
 
 	f "github.com/hlts2/gweather/internal/fetcher"
+	"github.com/hlts2/gweather/internal/redis"
 	"github.com/kpango/glg"
+	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 )
 
-var fetcher f.WetherInfomationFetcher
+var (
+	fetcher f.WetherInfomationFetcher
+	pool    redis.Pool
+)
 
 func action(cli *cli.Context) (err error) {
 	ctx, cancel := context.WithCancel(context.Background())
@@ -44,20 +49,23 @@ func action(cli *cli.Context) (err error) {
 				glg.Errorf("faild to fetch contents: %v", err)
 			}
 
-			_ = mm
+			conn, err := pool.GetContext(ctx)
+			if err != nil {
+				cancel()
+				err = errors.Wrap(err, "faild to get redis connection")
+				break
+			}
 
-			// // FIXME: 毎回Connectionを生成しない
-			// c := redis.NewConn(nil, 1*time.Microsecond, 1*time.Second)
-			//
 			// // e.g) key: 気象特別警報・警報・注意報_鳥取地方気象台
-			// for key, val := range mm {
-			// 	c.Send("SET", key, val)
-			// }
-			//
-			// err = c.Flush()
-			// if err != nil {
-			// 	glg.Errorf("faild to flush: %v", err)
-			// }
+			for key, val := range mm {
+				if err := conn.Send("SET", key, val); err != nil {
+					glg.Errorf("faild to send: %v", err)
+				}
+			}
+
+			if err := conn.Flush(); err != nil {
+				glg.Errorf("faild to flush: %v", err)
+			}
 
 			glg.Infof("Finish job. time: %v", time.Since(start))
 		}
@@ -68,6 +76,11 @@ func before(cli *cli.Context) error {
 	if fetcher == nil {
 		fetcher = f.New()
 	}
+
+	if pool != nil {
+		redis.New(cli.String("host"))
+	}
+
 	return nil
 }
 
