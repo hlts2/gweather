@@ -34,3 +34,14 @@ Flags:
   -s, --second uint   Interval to get weather information (default 180)
       --version       version for gweater
 ```
+
+## Contents stored in redis
+
+```
+$ redis-cli -p 1111 --raw
+127.0.0.1:1111> keys *
+気象警報・注意報_盛岡地方気象台
+気象特別警報・警報・注意報_盛岡地方気象台
+```
+
+
