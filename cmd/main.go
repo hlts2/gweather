@@ -77,24 +77,21 @@ func action(cli *cli.Context) (err error) {
 	}
 }
 
-func before(cli *cli.Context) error {
-	if fetcher == nil {
-		fetcher = f.New()
-	}
-
-	if pool == nil {
-		pool = redis.New(cli.String("host"))
-	}
-
-	return nil
-}
-
 func getApp() *cli.App {
 	app := cli.NewApp()
 	app.Name = "gweater"
 	app.Usage = "CLI tool for acquiring weather information regularly"
 	app.Version = "v1.0,0"
-	app.Before = before
+	app.Before = func(cli *cli.Context) error {
+		if fetcher == nil {
+			fetcher = f.New()
+		}
+
+		if pool == nil {
+			pool = redis.New(cli.String("host"))
+		}
+		return nil
+	}
 	app.Action = action
 	app.Flags = []cli.Flag{
 		cli.UintFlag{
