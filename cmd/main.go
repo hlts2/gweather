@@ -22,7 +22,10 @@ var (
 
 func action(cli *cli.Context) (err error) {
 	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
+	defer func() {
+		cancel()
+		pool.Close()
+	}()
 
 	sigCh := make(chan os.Signal)
 	signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
