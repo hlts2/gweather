@@ -42,6 +42,15 @@ $ redis-cli -p 1111 --raw
 127.0.0.1:1111> keys *
 気象警報・注意報_盛岡地方気象台
 気象特別警報・警報・注意報_盛岡地方気象台
+127.0.0.1:1111> get 気象特別警報・警報・注意報_盛岡地方気象台
 ```
+
+Contents when acquired with the key(`気象特別警報・警報・注意報_盛岡地方気象台`)
+https://github.com/hlts2/gweather/blob/master/_data/data.json
+
+
+
+
+
 
 
