@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+<title>高頻度（随時）</title>
+<subtitle>JMAXML publishing feed</subtitle>
+<updated>2019-03-25T17:28:01+09:00</updated>
+<id>urn:uuid:f3a8b3e6-12db-390b-b0a6-77e6b5c41cdc</id>
+<link rel="related" href="http://www.jma.go.jp/" />
+<link rel="self" href="http://www.data.jma.go.jp/developer/xml/feed/extra.xml" />
+<link rel="hub" href="http://alert-hub.appspot.com/" />
+<rights type="html"><![CDATA[
+<a href="http://www.jma.go.jp/jma/kishou/info/coment.html">利用規約</a>,
+<a href="http://www.jma.go.jp/jma/en/copyright.html">Terms of Use</a>
+]]></rights>
+<entry>
+<title>気象警報・注意報</title>
+<id>urn:uuid:4eb2228e-262f-302f-892c-d7726f196984</id>
+<updated>2019-03-25T08:27:36Z</updated>
+<author><name>盛岡地方気象台</name></author>
+<link type="application/xml" href="http://www.data.jma.go.jp/developer/xml/data/4eb2228e-262f-302f-892c-d7726f196984.xml" />
+<content type="text">【岩手県気象警報・注意報】内陸では、２５日夜のはじめ頃まで落雷に、２６日までなだれに注意してください。沿岸北部、沿岸南部では、２７日まで空気の乾燥による火の取り扱いに注意してください。</content>
+</entry>
+<entry>
+<title>気象特別警報・警報・注意報</title>
+<id>urn:uuid:b0af90d4-23a8-3628-a489-2d40421838d6</id>
+<updated>2019-03-25T08:27:36Z</updated>
+<author><name>盛岡地方気象台</name></author>
+<link type="application/xml" href="127.0.0.1:1102/test_2.xml" />
+<content type="text">【岩手県気象警報・注意報】内陸では、２５日夜のはじめ頃まで落雷に、２６日までなだれに注意してください。沿岸北部、沿岸南部では、２７日まで空気の乾燥による火の取り扱いに注意してください。</content>
+</entry>
+</feed>
