@@ -22,7 +22,7 @@ func main() {
 		}
 	}()
 
-	// setting for mockc.
+	// setting for mock.
 	os.Args = []string{"", "-s", "1", "--host", "redis://127.0.0.1:1111"}
 	cmd.WeatherInfoURL = "http://127.0.0.1:1102/test_1.xml"
 
