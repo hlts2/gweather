@@ -8,23 +8,24 @@ import (
 	"syscall"
 	"time"
 
-	f "github.com/hlts2/gweather/internal/fetcher"
 	"github.com/hlts2/gweather/internal/redis"
 	"github.com/kpango/glg"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
+
+	f "github.com/hlts2/gweather/internal/fetcher"
 )
 
-var (
+type action struct {
 	fetcher f.WetherInfomationFetcher
 	pool    redis.Pool
-)
+}
 
-func action(cli *cli.Context) (err error) {
+func (a *action) do(cli *cli.Context) (err error) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer func() {
 		cancel()
-		pool.Close()
+		a.pool.Close()
 	}()
 
 	sigCh := make(chan os.Signal)
@@ -48,12 +49,12 @@ func action(cli *cli.Context) (err error) {
 			start := time.Now()
 			glg.Info("Start job to get information")
 
-			mm, err := fetcher.Fetch(ctx, f.URL)
+			mm, err := a.fetcher.Fetch(ctx, f.URL)
 			if err != nil {
 				glg.Errorf("faild to fetch contents: %v", err)
 			}
 
-			conn, err := pool.GetContext(ctx)
+			conn, err := a.pool.GetContext(ctx)
 			if err != nil {
 				cancel()
 				err = errors.Wrap(err, "faild to get redis connection")
@@ -77,23 +78,43 @@ func action(cli *cli.Context) (err error) {
 	}
 }
 
+type option func(*action)
+
+// WithFetcher returns an option that sets the fetcher.WetherInfomationFetcher implementation.
+func WithFetcher(fetcher f.WetherInfomationFetcher) func(*action) {
+	return func(a *action) {
+		a.fetcher = fetcher
+	}
+}
+
+// WithPool returns an option that sets the redis.Pool implementation.
+func WithPool(pool redis.Pool) func(*action) {
+	return func(a *action) {
+		a.pool = pool
+	}
+}
+
 // GetApp returns cli application.
-func GetApp() *cli.App {
+func GetApp(ops ...option) *cli.App {
 	app := cli.NewApp()
 	app.Name = "gweater"
 	app.Usage = "CLI tool for acquiring weather information regularly"
 	app.Version = "v1.0,0"
+
+	action := new(action)
+
 	app.Before = func(cli *cli.Context) error {
-		if fetcher == nil {
-			fetcher = f.New()
+		action.fetcher = f.New()
+		action.pool = redis.New(cli.String("h"))
+
+		for _, op := range ops {
+			op(action)
 		}
 
-		if pool == nil {
-			pool = redis.New(cli.String("host"))
-		}
 		return nil
 	}
-	app.Action = action
+
+	app.Action = action.do
 	app.Flags = []cli.Flag{
 		cli.UintFlag{
 			Name:  "second, s",
