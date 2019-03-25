@@ -17,7 +17,7 @@ import (
 )
 
 type action struct {
-	fetcher f.WetherInfomationFetcher
+	fetcher f.WeatherInfomationFetcher
 	pool    redis.Pool
 }
 
@@ -81,7 +81,7 @@ func (a *action) do(cli *cli.Context) (err error) {
 type option func(*action)
 
 // WithFetcher returns an option that sets the fetcher.WetherInfomationFetcher implementation.
-func WithFetcher(fetcher f.WetherInfomationFetcher) func(*action) {
+func WithFetcher(fetcher f.WeatherInfomationFetcher) func(*action) {
 	return func(a *action) {
 		a.fetcher = fetcher
 	}

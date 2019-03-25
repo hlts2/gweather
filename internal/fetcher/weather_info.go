@@ -17,8 +17,8 @@ const (
 	URL = "http://www.data.jma.go.jp/developer/xml/feed/extra.xml"
 )
 
-// WetherInfomationFetcher represents an interface to fetch weather implementation.
-type WetherInfomationFetcher interface {
+// WeatherInfomationFetcher represents an interface to fetch weather implementation.
+type WeatherInfomationFetcher interface {
 	Fetch(ctx context.Context, url string) (map[string]map[string]interface{}, error)
 }
 
@@ -27,7 +27,7 @@ type wetherInfomationFetcherImpl struct {
 }
 
 // New returns WetherInfomationFetcher implementation(*wetherInfomationFetcherImpl).
-func New() WetherInfomationFetcher {
+func New() WeatherInfomationFetcher {
 	return new(wetherInfomationFetcherImpl)
 }
 
