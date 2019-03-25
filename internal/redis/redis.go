@@ -13,7 +13,7 @@ type Pool interface {
 	Close() error
 }
 
-// New returns Pool iplementation()
+// New returns Pool implementation.
 func New(url string) Pool {
 	return &redis.Pool{
 		Dial: func() (redis.Conn, error) {
