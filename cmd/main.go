@@ -77,7 +77,8 @@ func action(cli *cli.Context) (err error) {
 	}
 }
 
-func getApp() *cli.App {
+// GetApp returns cli application.
+func GetApp() *cli.App {
 	app := cli.NewApp()
 	app.Name = "gweater"
 	app.Usage = "CLI tool for acquiring weather information regularly"
@@ -109,7 +110,7 @@ func getApp() *cli.App {
 }
 
 func main() {
-	app := getApp()
+	app := GetApp()
 
 	glg.Info("Start cli application")
 	if err := app.Run(os.Args); err != nil {
