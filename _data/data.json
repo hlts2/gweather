@@ -1,0 +1,1387 @@
+{
+    "body": [
+        {
+            "-type": "気象警報・注意報（府県予報区等）",
+            "Item": {
+                "Area": {
+                    "Code": "030000",
+                    "Name": "岩手県"
+                },
+                "ChangeStatus": "警報・注意報種別に変化有",
+                "EditingMark": "0",
+                "FullStatus": "一部",
+                "Kind": [
+                    {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Status": "発表"
+                    },
+                    {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    },
+                    {
+                        "Code": "22",
+                        "Name": "なだれ注意報",
+                        "Status": "継続"
+                    }
+                ]
+            }
+        },
+        {
+            "-type": "気象警報・注意報（一次細分区域等）",
+            "Item": [
+                {
+                    "Area": {
+                        "Code": "030010",
+                        "Name": "内陸"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "0",
+                    "FullStatus": "一部",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "030020",
+                        "Name": "沿岸北部"
+                    },
+                    "ChangeStatus": "変化無",
+                    "EditingMark": "1",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "030030",
+                        "Name": "沿岸南部"
+                    },
+                    "ChangeStatus": "変化無",
+                    "EditingMark": "1",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    }
+                }
+            ]
+        },
+        {
+            "-type": "気象警報・注意報（市町村等をまとめた地域等）",
+            "Item": [
+                {
+                    "Area": {
+                        "Code": "030011",
+                        "Name": "盛岡地域"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "1",
+                    "FullStatus": "一部",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "030012",
+                        "Name": "二戸地域"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "1",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "030013",
+                        "Name": "花北地域"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "1",
+                    "FullStatus": "全域",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "030014",
+                        "Name": "遠野地域"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "1",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "030015",
+                        "Name": "奥州金ケ崎地域"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "1",
+                    "FullStatus": "全域",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "030016",
+                        "Name": "両磐地域"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "EditingMark": "1",
+                    "FullStatus": "一部",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "030021",
+                        "Name": "久慈地域"
+                    },
+                    "ChangeStatus": "変化無",
+                    "EditingMark": "0",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "030022",
+                        "Name": "宮古地域"
+                    },
+                    "ChangeStatus": "変化無",
+                    "EditingMark": "0",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "030031",
+                        "Name": "釜石地域"
+                    },
+                    "ChangeStatus": "変化無",
+                    "EditingMark": "0",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "030032",
+                        "Name": "大船渡地域"
+                    },
+                    "ChangeStatus": "変化無",
+                    "EditingMark": "0",
+                    "FullStatus": "全域",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Status": "継続"
+                    }
+                }
+            ]
+        },
+        {
+            "-type": "気象警報・注意報（市町村等）",
+            "Item": [
+                {
+                    "Area": {
+                        "Code": "0320100",
+                        "Name": "盛岡市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0320200",
+                        "Name": "宮古市"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0320300",
+                        "Name": "大船渡市"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0320500",
+                        "Name": "花巻市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0320600",
+                        "Name": "北上市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0320700",
+                        "Name": "久慈市"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0320800",
+                        "Name": "遠野市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0320900",
+                        "Name": "一関市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0321000",
+                        "Name": "陸前高田市"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0321100",
+                        "Name": "釜石市"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0321300",
+                        "Name": "二戸市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0321400",
+                        "Name": "八幡平市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0321500",
+                        "Name": "奥州市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0321600",
+                        "Name": "滝沢市"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0330100",
+                        "Name": "雫石町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0330200",
+                        "Name": "葛巻町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0330300",
+                        "Name": "岩手町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0332100",
+                        "Name": "紫波町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0332200",
+                        "Name": "矢巾町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0336600",
+                        "Name": "西和賀町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0338100",
+                        "Name": "金ケ崎町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": [
+                        {
+                            "Addition": {
+                                "Note": "突風"
+                            },
+                            "Code": "14",
+                            "Name": "雷注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２５日",
+                                        "Term": "夜のはじめ頃"
+                                    }
+                                },
+                                "Type": "雷"
+                            },
+                            "Status": "発表"
+                        },
+                        {
+                            "Code": "22",
+                            "Name": "なだれ注意報",
+                            "Property": {
+                                "AdvisoryPeriod": {
+                                    "EndTime": {
+                                        "Date": "２６日"
+                                    }
+                                },
+                                "Type": "なだれ"
+                            },
+                            "Status": "継続"
+                        }
+                    ]
+                },
+                {
+                    "Area": {
+                        "Code": "0340200",
+                        "Name": "平泉町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0344100",
+                        "Name": "住田町"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0346100",
+                        "Name": "大槌町"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0348200",
+                        "Name": "山田町"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0348300",
+                        "Name": "岩泉町"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0348400",
+                        "Name": "田野畑村"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0348500",
+                        "Name": "普代村"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0350100",
+                        "Name": "軽米町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0350300",
+                        "Name": "野田村"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0350600",
+                        "Name": "九戸村"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0350700",
+                        "Name": "洋野町"
+                    },
+                    "ChangeStatus": "変化無",
+                    "Kind": {
+                        "Code": "21",
+                        "Name": "乾燥注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２７日"
+                                }
+                            },
+                            "HumidityPart": {
+                                "Base": {
+                                    "Humidity": [
+                                        {
+                                            "#content": "55",
+                                            "-description": "５５パーセント",
+                                            "-type": "実効湿度",
+                                            "-unit": "%"
+                                        },
+                                        {
+                                            "#content": "35",
+                                            "-description": "３５パーセント",
+                                            "-type": "最小湿度",
+                                            "-unit": "%"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Type": "乾燥"
+                        },
+                        "Status": "継続"
+                    }
+                },
+                {
+                    "Area": {
+                        "Code": "0352400",
+                        "Name": "一戸町"
+                    },
+                    "ChangeStatus": "警報・注意報種別に変化有",
+                    "Kind": {
+                        "Addition": {
+                            "Note": "突風"
+                        },
+                        "Code": "14",
+                        "Name": "雷注意報",
+                        "Property": {
+                            "AdvisoryPeriod": {
+                                "EndTime": {
+                                    "Date": "２５日",
+                                    "Term": "夜のはじめ頃"
+                                }
+                            },
+                            "Type": "雷"
+                        },
+                        "Status": "発表"
+                    }
+                }
+            ]
+        }
+    ],
+    "content": "【岩手県気象警報・注意報】内陸では、２５日夜のはじめ頃まで落雷に、２６日までなだれに注意してください。沿岸北部、沿岸南部では、２７日まで空気の乾燥による火の取り扱いに注意してください。",
+    "name": "盛岡地方気象台",
+    "title": "気象特別警報・警報・注意報",
+    "updated": "2019-03-25T08:27:36Z"
+}
