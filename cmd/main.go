@@ -56,7 +56,7 @@ func action(cli *cli.Context) (err error) {
 				break
 			}
 
-			// // e.g) key: 気象特別警報・警報・注意報_鳥取地方気象台
+			// e.g) key: 気象特別警報・警報・注意報_鳥取地方気象台
 			for key, val := range mm {
 				if err := conn.Send("SET", key, val); err != nil {
 					glg.Errorf("faild to send: %v", err)
