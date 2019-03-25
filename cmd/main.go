@@ -105,7 +105,7 @@ func GetApp(ops ...option) *cli.App {
 
 	app.Before = func(cli *cli.Context) error {
 		action.fetcher = f.New()
-		action.pool = redis.New(cli.String("h"))
+		action.pool = redis.New(cli.String("host"))
 
 		for _, op := range ops {
 			op(action)
