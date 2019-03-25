@@ -25,6 +25,9 @@ var roodCmd = &cobra.Command{
 	},
 }
 
+// WeatherInfoURL is a variable to mock the URL.
+var WeatherInfoURL = f.URL
+
 func run(cmd *cobra.Command, args []string) (rerr error) {
 	fetcher, pool := f.New(), redis.New(host)
 
@@ -55,7 +58,7 @@ func run(cmd *cobra.Command, args []string) (rerr error) {
 			start := time.Now()
 			glg.Info("Start job to get information")
 
-			mm, err := fetcher.Fetch(ctx, f.URL)
+			mm, err := fetcher.Fetch(ctx, WeatherInfoURL)
 			if err != nil {
 				glg.Errorf("faild to fetch contents: %v", err)
 			}
