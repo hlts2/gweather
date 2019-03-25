@@ -24,7 +24,7 @@
 <id>urn:uuid:b0af90d4-23a8-3628-a489-2d40421838d6</id>
 <updated>2019-03-25T08:27:36Z</updated>
 <author><name>盛岡地方気象台</name></author>
-<link type="application/xml" href="127.0.0.1:1102/test_2.xml" />
+<link type="application/xml" href="http://127.0.0.1:1102/test_2.xml" />
 <content type="text">【岩手県気象警報・注意報】内陸では、２５日夜のはじめ頃まで落雷に、２６日までなだれに注意してください。沿岸北部、沿岸南部では、２７日まで空気の乾燥による火の取り扱いに注意してください。</content>
 </entry>
 </feed>

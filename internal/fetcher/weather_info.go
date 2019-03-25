@@ -5,10 +5,11 @@ import (
 	"net/http"
 	"sync"
 
+	"go.uber.org/multierr"
+
 	xj "github.com/basgys/goxml2json"
 	"github.com/hlts2/gson"
 	"github.com/pkg/errors"
-	"go.uber.org/multierr"
 )
 
 const (
@@ -53,7 +54,7 @@ func createGsonFromURL(url string) (*gson.Gson, error) {
 func (w *wetherInfomationFetcherImpl) Fetch(ctx context.Context, url string) (map[string]map[string]interface{}, error) {
 	g, err := createGsonFromURL(url)
 	if err != nil {
-		return nil, errors.Wrapf(err, "faild to create gson from url: %v", URL)
+		return nil, errors.Wrapf(err, "faild to create gson from url: %v", url)
 	}
 
 	r, err := g.GetByKeys("feed", "entry")
