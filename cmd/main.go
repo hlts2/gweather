@@ -89,7 +89,7 @@ func before(cli *cli.Context) error {
 	return nil
 }
 
-func main() {
+func getApp() *cli.App {
 	app := cli.NewApp()
 	app.Name = "gweater"
 	app.Usage = "CLI tool for acquiring weather information regularly"
@@ -108,6 +108,11 @@ func main() {
 			Value: "redis://127.0.0.1:6379",
 		},
 	}
+	return app
+}
+
+func main() {
+	app := getApp()
 
 	glg.Info("Start cli application")
 	if err := app.Run(os.Args); err != nil {
