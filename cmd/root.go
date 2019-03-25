@@ -8,12 +8,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hlts2/gweather/internal/redis"
 	"github.com/kpango/glg"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 
 	f "github.com/hlts2/gweather/internal/fetcher"
+	"github.com/hlts2/gweather/internal/redis"
 )
 
 var roodCmd = &cobra.Command{
@@ -29,6 +29,9 @@ var roodCmd = &cobra.Command{
 var WeatherInfoURL = f.URL
 
 func run(cmd *cobra.Command, args []string) (rerr error) {
+	glg.Info("Start cli application")
+	defer glg.Info("Finish cli application")
+
 	fetcher, pool := f.New(), redis.New(host)
 
 	ctx, cancel := context.WithCancel(context.Background())
@@ -99,12 +102,8 @@ func init() {
 
 // Execute executes cli application.
 func Execute() {
-	glg.Info("Start cli application")
-
 	if err := roodCmd.Execute(); err != nil {
 		glg.Error("exit app because an error occurred: %v", err)
 		os.Exit(1)
 	}
-
-	glg.Info("Finish cli application")
 }
