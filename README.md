@@ -2,7 +2,7 @@
 
 gweather is CLI tool for acquiring weather information regularly.
 
-Weather information is obtained from [Meteorological Agency](http://xml.kishou.go.jp/xmlpull.html) data and stored on redis
+Weather information is obtained from [Meteorological Agency](http://xml.kishou.go.jp/xmlpull.html) data and stored on redis.
 
 
 ## Install
@@ -13,6 +13,7 @@ go get github.com/hlts2/gweather
 
 ## Example
 
+Get data at one second intervals and store in redis.
 ```
 $ gweather -s 1 --host redis://127.0.0.1:6379
 
