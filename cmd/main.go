@@ -21,7 +21,7 @@ type action struct {
 	pool    redis.Pool
 }
 
-func (a *action) do(cli *cli.Context) (err error) {
+func (a *action) do(cli *cli.Context) (rerr error) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer func() {
 		cancel()
@@ -57,7 +57,7 @@ func (a *action) do(cli *cli.Context) (err error) {
 			conn, err := a.pool.GetContext(ctx)
 			if err != nil {
 				cancel()
-				err = errors.Wrap(err, "faild to get redis connection")
+				rerr = errors.Wrap(err, "faild to get redis connection")
 				break
 			}
 
