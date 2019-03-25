@@ -105,8 +105,7 @@ func main() {
 	}
 
 	glg.Info("Start cli application")
-	err := app.Run(os.Args)
-	if err != nil {
+	if err := app.Run(os.Args); err != nil {
 		glg.Error(err)
 	}
 	glg.Info("Finish cli application")
